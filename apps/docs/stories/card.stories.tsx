@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Card } from '@composable/tw-ui/card';
+import { Card } from "@composable/tw-ui/card";
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Card> = {
   component: Card,
@@ -16,8 +16,8 @@ type Story = StoryObj<typeof Card>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  name: 'Card',
+  name: "Card",
   args: {
-    children: 'Hello',
+    children: "Hello",
   },
 };

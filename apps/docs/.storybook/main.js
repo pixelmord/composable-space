@@ -1,4 +1,4 @@
-import { dirname, join, resolve } from "path";
+import { dirname, join, resolve } from "node:path";
 
 function getAbsolutePath(value) {
   return dirname(require.resolve(join(value, "package.json")));
@@ -10,7 +10,7 @@ const config = {
   addons: [
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
-    "@chromatic-com/storybook"
+    "@chromatic-com/storybook",
   ],
 
   framework: {
@@ -41,8 +41,8 @@ const config = {
   },
 
   typescript: {
-    reactDocgen: "react-docgen-typescript"
-  }
+    reactDocgen: "react-docgen-typescript",
+  },
 };
 
 export default config;
