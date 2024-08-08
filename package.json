@@ -17,7 +17,7 @@
     "turbo": "^2.0.11"
   },
   "packageManager": "pnpm@9.7.0",
-  "name": "design-system",
+  "name": "composable-space",
   "volta": {
     "node": "20.16.0"
   }
