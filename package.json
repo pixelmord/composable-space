@@ -5,12 +5,14 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format-and-lint": "biome check .",
+    "format-and-lint:fix": "biome check . --write",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "@changesets/cli": "^2.27.1",
     "prettier": "^3.2.5",
     "turbo": "^2.0.11"
