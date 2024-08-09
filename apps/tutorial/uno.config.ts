@@ -1,18 +1,23 @@
-import { unoCSSConfig } from '@tutorialkit/astro';
-import { globSync, convertPathToPattern } from 'fast-glob';
-import fs from 'node:fs/promises';
-import { basename, dirname, join } from 'node:path';
-import { defineConfig, presetIcons, presetUno, transformerDirectives } from 'unocss';
+import fs from "node:fs/promises";
+import { basename, dirname, join } from "node:path";
+import { unoCSSConfig } from "@tutorialkit/astro";
+import { convertPathToPattern, globSync } from "fast-glob";
+import {
+  defineConfig,
+  presetIcons,
+  presetUno,
+  transformerDirectives,
+} from "unocss";
 
-const iconPaths = globSync('./icons/languages/*.svg');
+const iconPaths = globSync("./icons/languages/*.svg");
 
 const customIconCollection = iconPaths.reduce(
   (acc, iconPath) => {
     const collectionName = basename(dirname(iconPath));
-    const [iconName] = basename(iconPath).split('.');
+    const [iconName] = basename(iconPath).split(".");
 
     acc[collectionName] ??= {};
-    acc[collectionName][iconName] = async () => fs.readFile(iconPath, 'utf8');
+    acc[collectionName][iconName] = async () => fs.readFile(iconPath, "utf8");
 
     return acc;
   },
@@ -23,10 +28,10 @@ export default defineConfig({
   ...unoCSSConfig,
   content: {
     inline: globSync([
-      `${convertPathToPattern(join(require.resolve('@tutorialkit/components-react'), '..')).replace('\\@', '/@')}/**/*.js`,
-      `${convertPathToPattern(join(require.resolve('@tutorialkit/astro'), '..')).replace('\\@', '/@')}/default/**/*.astro`,
+      `${convertPathToPattern(join(require.resolve("@tutorialkit/components-react"), "..")).replace("\\@", "/@")}/**/*.js`,
+      `${convertPathToPattern(join(require.resolve("@tutorialkit/astro"), "..")).replace("\\@", "/@")}/default/**/*.astro`,
     ]).map((filePath) => {
-      return () => fs.readFile(filePath, { encoding: 'utf8' });
+      return () => fs.readFile(filePath, { encoding: "utf8" });
     }),
   },
   transformers: [transformerDirectives()],
