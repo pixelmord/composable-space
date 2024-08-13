@@ -10,6 +10,7 @@
   "exports": {
     "./lib/*": "./src/lib/*.ts",
     "./tinacms/*": "./src/tinacms/*.ts",
-    "./types/*": "./src/types/*.ts"
+    "./types/*": "./src/types/*.ts",
+    "./types": "./src/types/index.ts"
   }
 }
