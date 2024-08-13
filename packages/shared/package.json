@@ -1,0 +1,15 @@
+{
+  "name": "@repo/shared",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^22.1.0",
+    "typescript": "^5.5.4"
+  },
+  "exports": {
+    "./lib/*": "./src/lib/*.ts",
+    "./tinacms/*": "./src/tinacms/*.ts",
+    "./types/*": "./src/types/*.ts"
+  }
+}
