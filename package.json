@@ -14,7 +14,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@changesets/cli": "^2.27.7",
-    "turbo": "^2.0.12"
+    "turbo": "^2.0.14"
   },
   "packageManager": "pnpm@9.7.0",
   "name": "composable-space",
