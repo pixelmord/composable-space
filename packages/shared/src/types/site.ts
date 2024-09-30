@@ -1,7 +1,7 @@
-export type Site = Record<string, unknown> & {
+export type Site = {
   website: string;
   author: string;
-  desc: string;
+  description: string;
   title: string;
   canonicalURL: string;
   ogImage?: string;

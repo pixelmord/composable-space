@@ -4,7 +4,8 @@ export const SITE: Site = {
   website: "https://pixelmord.de/", // replace this with your deployed domain
   canonicalURL: "https://pixelmord.de/",
   author: "Andreas Adam",
-  desc: "Private Homepage von Andreas Adam mit Rezepten, Fotos und kreativen Experimenten",
+  description:
+    "Private Homepage von Andreas Adam mit Rezepten, Fotos und kreativen Experimenten",
   title: "Andreas Adam (@pixelmord)",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,

@@ -1,5 +1,5 @@
 ---
-import { SITE } from "@/config";
+
 import type { Site } from "@repo/shared/types";
 
 export type Props = Partial<Site> & {
@@ -9,11 +9,11 @@ export type Props = Partial<Site> & {
 };
 
 const {
-  title = SITE.title,
-  author = SITE.author,
-  description = SITE.desc,
-  ogImage = SITE.ogImage,
-  canonicalURL = SITE.canonicalURL,
+  title,
+  author,
+  description,
+  ogImage,
+  canonicalURL,
   pubDatetime,
   modDatetime,
   scrollSmooth = false,

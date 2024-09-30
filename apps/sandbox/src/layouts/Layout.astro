@@ -1,14 +1,14 @@
 ---
 import { LOCALE, SITE } from "@/config";
+import BaseHead from "@composable/astro-ui/components/BaseHead";
 ---
 
-<html lang="{LOCALE.lang}">
-  <head></head>
-
-
+<html lang={LOCALE.lang}>
+  <head>
+    <BaseHead title={SITE.title} description={SITE.description} />
+  </head>
 <body>
   <slot />
   <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-
 </body>
 </html>

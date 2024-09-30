@@ -1,5 +1,5 @@
 {
-  "name": "astro-ui",
+  "name": "@composable/astro-ui",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -14,5 +14,8 @@
     "@repo/shared": "workspace:*",
     "astro": "^4.13.3",
     "typescript": "^5.5.4"
+  },
+  "exports": {
+    "./components/*": ["./src/components/*.astro"]
   }
 }
