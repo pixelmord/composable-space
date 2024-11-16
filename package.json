@@ -3,6 +3,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:pixelmord": "turbo run dev --filter=pixelmord",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
     "format-and-lint": "biome check .",
@@ -12,8 +13,8 @@
     "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "@changesets/cli": "^2.27.7",
+    "@biomejs/biome": "1.9.4",
+    "@changesets/cli": "^2.27.9",
     "turbo": "^2.1.3"
   },
   "packageManager": "pnpm@9.12.2",

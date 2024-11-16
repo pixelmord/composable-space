@@ -14,7 +14,8 @@
       "build",
       "src/assets",
       "public",
-      "node_modules/"
+      "node_modules/",
+      "__generated__"
     ]
   },
   "organizeImports": {
@@ -29,7 +30,8 @@
       "src/assets",
       "node_modules/",
       "public",
-      ".astro"
+      ".astro",
+      "__generated__"
     ],
     "rules": {
       "recommended": true

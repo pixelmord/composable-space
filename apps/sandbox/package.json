@@ -10,20 +10,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.2",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.2",
     "@composable/astro-ui": "workspace:*",
     "@repo/shared": "workspace:*",
-    "@sentry/astro": "^8.26.0",
-    "@spotlightjs/astro": "^2.1.6",
-    "astro": "^4.13.2",
-    "flowbite": "^2.5.1",
-    "tailwindcss": "^3.4.10",
-    "tinacms": "^2.1.0",
-    "typescript": "^5.5.4"
+    "@sentry/astro": "^8.34.0",
+    "@spotlightjs/astro": "^2.1.11",
+    "astro": "^4.16.6",
+    "flowbite": "^2.5.2",
+    "tailwindcss": "^3.4.14",
+    "tinacms": "^2.2.9",
+    "typescript": "^5.6.3"
   },
   "devDependencies": {
-    "@tinacms/cli": "^1.5.52",
-    "@types/node": "^22.2.0"
+    "@tinacms/cli": "^1.6.9",
+    "@types/node": "^22.7.6"
   }
 }
