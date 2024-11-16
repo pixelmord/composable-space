@@ -1,15 +1,52 @@
 ---
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import Nav from "@/components/Nav.astro";
 import { LOCALE, SITE } from "@/config";
-import BaseHead from "@composable/astro-ui/components/BaseHead";
+import BaseHead, {
+  type Props as HeadProps,
+} from "@composable/astro-ui/components/BaseHead";
+import { ViewTransitions } from "astro:transitions";
+import "@/styles/global.css";
+
+export type Props = HeadProps & { showHeader?: boolean };
+
+const {
+  showHeader = true,
+  description = SITE.description,
+  title = SITE.title,
+  ...head
+} = Astro.props;
 ---
 
+<!doctype html>
 <html lang={LOCALE.lang}>
   <head>
-    <BaseHead title={SITE.title} description={SITE.description} />
+    <BaseHead title={title !== SITE.title ? `${title} | ${SITE.title}` : title} description={description}  {...head}/>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap"
+        rel="stylesheet"
+    />
+    <script>
+      if (localStorage.theme === 'dark') {
+          document.documentElement.classList.add('dark');
+      }
+    </script>
+
+    <ViewTransitions />
   </head>
 
-
-<body>
-  <slot />
+  <body class="bg-main text-main">
+    <div class="flex flex-col min-h-screen px-4 md:px-8">
+        <Nav />
+        {showHeader && <Header />}
+        <main class="grow w-full max-w-3xl mx-auto">
+            <slot />
+        </main>
+        <Footer />
+    </div>
 </body>
 </html>

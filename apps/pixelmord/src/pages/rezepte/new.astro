@@ -1,0 +1,261 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="New Recipe">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Add New Recipe</h1>
+
+    <form class="max-w-4xl mx-auto space-y-8" id="recipeForm">
+      <!-- Basic Information -->
+      <section class="space-y-4">
+        <h2 class="text-xl font-semibold">Basic Information</h2>
+        <div class="grid grid-cols-1 gap-4">
+          <div>
+            <label for="name" class="block text-sm font-medium">Recipe Name</label>
+            <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+          </div>
+          <div>
+            <label for="description" class="block text-sm font-medium">Description</label>
+            <textarea id="description" name="description" rows="3" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"></textarea>
+          </div>
+          <div>
+            <label for="recipeCuisine" class="block text-sm font-medium">Cuisine</label>
+            <input type="text" id="recipeCuisine" name="recipeCuisine" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+          </div>
+          <div>
+            <label for="recipeCategory" class="block text-sm font-medium">Category</label>
+            <input type="text" id="recipeCategory" name="recipeCategory" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+          </div>
+          <div>
+            <label for="keywords" class="block text-sm font-medium">Keywords (comma-separated)</label>
+            <input type="text" id="keywords" name="keywords" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+          </div>
+          <div>
+            <label for="recipeYield" class="block text-sm font-medium">Yield (e.g., "4 servings")</label>
+            <input type="text" id="recipeYield" name="recipeYield" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+          </div>
+        </div>
+      </section>
+
+      <!-- Time Information -->
+      <section class="space-y-4">
+        <h2 class="text-xl font-semibold">Time Information</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label for="prepTime" class="block text-sm font-medium">Prep Time (minutes)</label>
+            <input type="number" id="prepTime" name="prepTime" min="0" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+          </div>
+          <div>
+            <label for="cookTime" class="block text-sm font-medium">Cook Time (minutes)</label>
+            <input type="number" id="cookTime" name="cookTime" min="0" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+          </div>
+          <div>
+            <label for="totalTime" class="block text-sm font-medium">Total Time (minutes)</label>
+            <input type="number" id="totalTime" name="totalTime" min="0" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+          </div>
+        </div>
+      </section>
+
+      <!-- Ingredients -->
+      <section class="space-y-4">
+        <h2 class="text-xl font-semibold">Ingredients</h2>
+        <div id="ingredientsList" class="space-y-2">
+          <div class="flex gap-2">
+            <input type="text" name="ingredients[]" class="flex-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Enter ingredient">
+            <button type="button" class="px-3 py-2 bg-green-500 text-white rounded-md" onclick="addIngredient()">+</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Instructions -->
+      <section class="space-y-4">
+        <h2 class="text-xl font-semibold">Instructions</h2>
+        <div id="instructionsList" class="space-y-4">
+          <div class="border p-4 rounded-md">
+            <div class="space-y-2">
+              <input type="text" name="instructionNames[]" placeholder="Step name" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+              <textarea name="instructionTexts[]" placeholder="Step instructions" rows="2" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"></textarea>
+              <input type="url" name="instructionUrls[]" placeholder="Step URL (optional)" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+              <input type="url" name="instructionImages[]" placeholder="Step image URL (optional)" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+            </div>
+          </div>
+        </div>
+        <button type="button" class="px-4 py-2 bg-green-500 text-white rounded-md" onclick="addInstruction()">Add Step</button>
+      </section>
+
+      <!-- Images -->
+      <section class="space-y-4">
+        <h2 class="text-xl font-semibold">Images</h2>
+        <div id="imagesList" class="space-y-2">
+          <div class="flex gap-2">
+            <input type="url" name="images[]" class="flex-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Enter image URL">
+            <button type="button" class="px-3 py-2 bg-green-500 text-white rounded-md" onclick="addImage()">+</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nutrition -->
+      <section class="space-y-4">
+        <h2 class="text-xl font-semibold">Nutrition Information</h2>
+        <div>
+          <label for="calories" class="block text-sm font-medium">Calories</label>
+          <input type="text" id="calories" name="calories" placeholder="e.g., 120 calories" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+        </div>
+      </section>
+
+      <button type="submit" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Save Recipe</button>
+    </form>
+  </main>
+</Layout>
+
+<script>
+interface Recipe {
+  "@context": string;
+  "@type": string;
+  name: string;
+  description: string;
+  recipeCuisine: string;
+  recipeCategory: string;
+  keywords: string;
+  recipeYield: string;
+  prepTime: string;
+  cookTime: string;
+  totalTime: string;
+  datePublished: string;
+  author: {
+    "@type": string;
+    name: string;
+  };
+  image: string[];
+  recipeIngredient: string[];
+  nutrition: {
+    "@type": string;
+    calories: string;
+  };
+  recipeInstructions: {
+    "@type": string;
+    name: string;
+    text: string;
+    url?: string;
+    image?: string;
+  }[];
+}
+
+function addIngredient(): void {
+  const container = document.getElementById('ingredientsList');
+  if (!container) return;
+
+  const div = document.createElement('div');
+  div.className = 'flex gap-2';
+  div.innerHTML = `
+    <input type="text" name="ingredients[]" class="flex-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Enter ingredient">
+    <button type="button" class="px-3 py-2 bg-red-500 text-white rounded-md" onclick="this.parentElement.remove()">-</button>
+  `;
+  container.appendChild(div);
+}
+
+function addInstruction(): void {
+  const container = document.getElementById('instructionsList');
+  if (!container) return;
+
+  const div = document.createElement('div');
+  div.className = 'border p-4 rounded-md';
+  div.innerHTML = `
+    <div class="space-y-2">
+      <input type="text" name="instructionNames[]" placeholder="Step name" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+      <textarea name="instructionTexts[]" placeholder="Step instructions" rows="2" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"></textarea>
+      <input type="url" name="instructionUrls[]" placeholder="Step URL (optional)" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+      <input type="url" name="instructionImages[]" placeholder="Step image URL (optional)" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+    </div>
+    <button type="button" class="mt-2 px-3 py-2 bg-red-500 text-white rounded-md" onclick="this.parentElement.remove()">Remove Step</button>
+  `;
+  container.appendChild(div);
+}
+
+function addImage(): void {
+  const container = document.getElementById('imagesList');
+  if (!container) return;
+
+  const div = document.createElement('div');
+  div.className = 'flex gap-2';
+  div.innerHTML = `
+    <input type="url" name="images[]" class="flex-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" placeholder="Enter image URL">
+    <button type="button" class="px-3 py-2 bg-red-500 text-white rounded-md" onclick="this.parentElement.remove()">-</button>
+  `;
+  container.appendChild(div);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('recipeForm') as HTMLFormElement;
+  if (!form) return;
+
+  form.addEventListener('submit', async (e: Event) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+
+    // Build the JSON-LD structure
+    const recipe: Recipe = {
+      "@context": "https://schema.org/",
+      "@type": "Recipe",
+      "name": formData.get('name') as string,
+      "description": formData.get('description') as string,
+      "recipeCuisine": formData.get('recipeCuisine') as string,
+      "recipeCategory": formData.get('recipeCategory') as string,
+      "keywords": formData.get('keywords') as string,
+      "recipeYield": formData.get('recipeYield') as string,
+      "prepTime": `PT${formData.get('prepTime')}M`,
+      "cookTime": `PT${formData.get('cookTime')}M`,
+      "totalTime": `PT${formData.get('totalTime')}M`,
+      "datePublished": new Date().toISOString().split('T')[0],
+      "author": {
+        "@type": "Person",
+        "name": "Recipe Author"
+      },
+      "image": Array.from(formData.getAll('images[]') as Iterable<string>).filter(Boolean),
+      "recipeIngredient": Array.from(formData.getAll('ingredients[]') as Iterable<string>).filter(Boolean),
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "calories": formData.get('calories') as string
+      },
+      "recipeInstructions": Array.from(document.querySelectorAll('#instructionsList > div')).map((step, index) => ({
+        "@type": "HowToStep",
+        "name": formData.getAll('instructionNames[]')[index] as string,
+        "text": formData.getAll('instructionTexts[]')[index] as string,
+        "url": (formData.getAll('instructionUrls[]')[index] as string) || undefined,
+        "image": (formData.getAll('instructionImages[]')[index] as string) || undefined
+      })).filter(step => step.name && step.text)
+    };
+
+    console.log(JSON.stringify(recipe, null, 2));
+
+    // Here you would typically send this data to your backend
+    alert('Recipe saved! Check the console for the JSON-LD output.');
+  });
+});
+</script>
+
+<style>
+  input[type="text"],
+  input[type="number"],
+  input[type="url"],
+  textarea {
+    @apply border-gray-300 rounded-md shadow-sm;
+  }
+
+  button {
+    @apply transition-colors duration-200;
+  }
+
+  .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+    @apply mt-8;
+  }
+
+  .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    @apply mt-4;
+  }
+
+  .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    @apply mt-2;
+  }
+</style>

@@ -1,0 +1,31 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Pagination from "@/components/Pagination.astro";
+
+import RecipePreview from "@/components/RecipePreview.astro";
+import { SITE } from "@/config";
+import BaseLayout from "@/layouts/Layout.astro";
+import { sortItemsByDateDesc } from "@/utils/data-utils";
+import type { GetStaticPathsOptions, Page } from "astro";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts = (await getCollection("recipes")).sort(sortItemsByDateDesc);
+  return paginate(posts, { pageSize: SITE.postsPerPage || 4 });
+}
+
+type Props = { page: Page<CollectionEntry<"recipes">> };
+
+const { page } = Astro.props;
+const recipes = page.data;
+---
+
+<BaseLayout
+    title="Rezepte"
+    description="Embark on a journey of personal insights and experiences through my recipes"
+    ogImage={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
+    showHeader={false}
+>
+    <h1 class="mb-12 text-2xl leading-tight font-serif italic sm:mb-16 sm:text-4xl">Kochrezepte</h1>
+    {recipes.map((post) => <RecipePreview post={post} class="mb-10 sm:mb-12" />)}
+    <Pagination page={page} class="my-16 sm:my-24" />
+</BaseLayout>
