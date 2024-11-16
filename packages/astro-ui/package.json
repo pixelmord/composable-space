@@ -10,12 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.2",
+    "@astrojs/check": "^0.9.4",
     "@repo/shared": "workspace:*",
-    "astro": "^4.13.3",
-    "typescript": "^5.5.4"
+    "astro": "^4.16.6",
+    "typescript": "^5.6.3"
   },
   "exports": {
-    "./components/*": ["./src/components/*.astro"]
+    "./components/*": ["./src/components/*.astro"],
+    "./icons/*": ["./src/icons/*.astro"]
   }
 }
