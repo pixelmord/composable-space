@@ -1,1 +1,1 @@
-# `@repo/ui`
+# `@composable/react-ui`
