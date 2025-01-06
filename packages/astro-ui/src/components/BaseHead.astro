@@ -6,7 +6,7 @@ export type Props = Partial<Site> & {
   pubDatetime?: Date;
   modDatetime?: Date | null;
   scrollSmooth?: boolean;
-  pageType?: 'website' | 'article';
+  pageType?: "website" | "article";
 };
 
 const {
@@ -16,32 +16,31 @@ const {
   ogImage,
   pubDatetime,
   modDatetime,
-  pageType = 'website',
+  pageType = "website",
   scrollSmooth = false,
 } = Astro.props;
 
 const resolvedImage = ogImage?.src
-    ? {
-          src: new URL(ogImage.src, Astro.site).toString(),
-          alt: ogImage.alt
-      }
-    : undefined;
+  ? {
+      src: new URL(ogImage.src, Astro.site).toString(),
+      alt: ogImage.alt,
+    }
+  : undefined;
 const canonicalURL = new URL(Astro.request.url, Astro.site);
 
 /**
  * Enforce some standard canonical URL formatting across the site.
  */
 function formatCanonicalURL(url: string | URL) {
-    const path = url.toString();
-    const hasQueryParams = path.includes('?');
-    // If there are query params, make sure the URL has no trailing slash
-    if (hasQueryParams) {
-        path.replace(/\/?$/, '');
-    }
-    // otherwise, canonical URL always has a trailing slash
-    return path.replace(/\/?$/, hasQueryParams ? '' : '/');
+  const path = url.toString();
+  const hasQueryParams = path.includes("?");
+  // If there are query params, make sure the URL has no trailing slash
+  if (hasQueryParams) {
+    path.replace(/\/?$/, "");
+  }
+  // otherwise, canonical URL always has a trailing slash
+  return path.replace(/\/?$/, hasQueryParams ? "" : "/");
 }
-
 ---
 
 <!-- High Priority Global Metadata -->

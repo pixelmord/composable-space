@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import Nav from "@/components/Nav.astro";
@@ -6,7 +7,6 @@ import { LOCALE, SITE } from "@/config";
 import BaseHead, {
   type Props as HeadProps,
 } from "@composable/astro-ui/components/BaseHead";
-import { ViewTransitions } from "astro:transitions";
 import "@/styles/global.css";
 
 export type Props = HeadProps & { showHeader?: boolean };

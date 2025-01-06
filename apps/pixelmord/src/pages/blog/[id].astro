@@ -1,12 +1,12 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import BaseLayout from "@/layouts/Layout.astro";
-import Button from "@composable/astro-ui/components/Button";
-import FormattedDate from "@composable/astro-ui/components/FormattedDate";
 import PostPreview from "@/components/PostPreview.astro";
 import Subscribe from "@/components/Subscribe.astro";
-import { sortItemsByDateDesc } from "@/utils/data-utils";
+import BaseLayout from "@/layouts/Layout.astro";
 import { slugify } from "@/utils/common-utils";
+import { sortItemsByDateDesc } from "@/utils/data-utils";
+import Button from "@composable/astro-ui/components/Button";
+import FormattedDate from "@composable/astro-ui/components/FormattedDate";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog")).sort(sortItemsByDateDesc);

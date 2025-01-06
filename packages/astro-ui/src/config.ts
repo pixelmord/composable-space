@@ -3,7 +3,7 @@ import type { Site, SocialObjects } from "@repo/shared/types";
 export const SITE: Site = {
   website: "https://example.com/", // replace this with your deployed domain
   author: "Andreas Adam",
-  desc: "Demo",
+  description: "Demo",
   title: "Demo Site",
 };
 

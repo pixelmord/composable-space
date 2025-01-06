@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "@/layouts/Layout.astro";
-import Button from "@composable/astro-ui/components/Button";
 import Hero from "@/components/Hero.astro";
 import PostPreview from "@/components/PostPreview.astro";
 import ProjectPreview from "@/components/ProjectPreview.astro";
+import Layout from "@/layouts/Layout.astro";
 import { sortItemsByDateDesc } from "@/utils/data-utils";
+import Button from "@composable/astro-ui/components/Button";
 
 const posts = (await getCollection("blog")).sort(sortItemsByDateDesc);
 const featuredPosts = posts.filter(({ data }) => data.isFeatured);

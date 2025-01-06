@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import ArrowRight from "@composable/astro-ui/icons/ArrowRight";
 import BaseLayout from "@/layouts/Layout.astro";
+import ArrowRight from "@composable/astro-ui/icons/ArrowRight";
 
 import {
-  sortItemsByDateDesc,
   getAllTags,
   getPostsByTag,
+  sortItemsByDateDesc,
 } from "@/utils/data-utils";
 
 const posts = (await getCollection("blog")).sort(sortItemsByDateDesc);
