@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/starlight": "^0.28.3",
+    "@astrojs/starlight": "^0.30.3",
     "@repo/shared": "workspace:*",
-    "astro": "^4.16.6",
+    "astro": "^5.1.2",
     "sharp": "^0.33.5",
     "typescript": "^5.6.3"
   }

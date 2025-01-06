@@ -1,4 +1,5 @@
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
 const seoSchema = z.object({
   title: z.string().min(5).max(120).optional(),
@@ -12,19 +13,22 @@ const seoSchema = z.object({
   pageType: z.enum(["website", "article"]).default("website"),
 });
 
+const blogSchema = z.object({
+  title: z.string(),
+  excerpt: z.string().optional(),
+  datePublished: z.coerce.date(),
+  updatedDate: z.coerce.date().optional(),
+  isFeatured: z.boolean().default(false),
+  tags: z.array(z.string()).default([]),
+  seo: seoSchema.optional(),
+});
 const blog = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    excerpt: z.string().optional(),
-    datePublished: z.coerce.date(),
-    updatedDate: z.coerce.date().optional(),
-    isFeatured: z.boolean().default(false),
-    tags: z.array(z.string()).default([]),
-    seo: seoSchema.optional(),
-  }),
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/blog" }),
+  schema: blogSchema,
 });
 
 const pages = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/pages" }),
   schema: z.object({
     title: z.string(),
     seo: seoSchema.optional(),
@@ -32,6 +36,10 @@ const pages = defineCollection({
 });
 
 const projects = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/projects",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
@@ -41,7 +49,7 @@ const projects = defineCollection({
   }),
 });
 const recipes = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/[^_]*.json", base: "./src/content/recipes" }),
   // Type-check frontmatter using Zod
   schema: z.object({
     "@context": z

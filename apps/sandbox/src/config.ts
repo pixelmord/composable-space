@@ -1,15 +1,12 @@
 import type { Site, SocialObjects } from "@repo/shared/types";
 
 export const SITE: Site = {
-  website: "https://pixelmord.de/", // replace this with your deployed domain
-  canonicalURL: "https://pixelmord.de/",
+  website: "https://sandbox.composableweb.com/", // replace this with your deployed domain
   author: "Andreas Adam",
-  description:
-    "Private Homepage von Andreas Adam mit Rezepten, Fotos und kreativen Experimenten",
-  title: "Andreas Adam (@pixelmord)",
-  ogImage: "astropaper-og.jpg",
-  lightAndDarkMode: true,
-  postPerPage: 3,
+  description: "A sandbox to try out new features of the Composable Web",
+  title: "ComposableWeb Sandbox",
+  ogImage: { src: "astropaper-og.jpg", alt: "Sandbox" },
+  postsPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 

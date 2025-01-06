@@ -1,9 +1,7 @@
 {
   "@type": "Recipe",
   "name": "Mango Chutney Recipe",
-  "author": {
-    "@id": "https://www.indianhealthyrecipes.com/#/schema/person/2d7d264cdc5dc6602ee06a087cd3fcb0"
-  },
+
   "description": "Mango chutney is a delicious sweet spicy and tangy relish you can serve over bread, parathas, tortillas, snacks, tikka, kebabs &amp; even with grilled meat dishes.",
   "datePublished": "2023-06-11T15:12:33+00:00",
   "image": [
@@ -12,7 +10,7 @@
     "https://www.indianhealthyrecipes.com/wp-content/uploads/2023/06/mango-chutney-recipe-500x375.jpg",
     "https://www.indianhealthyrecipes.com/wp-content/uploads/2023/06/mango-chutney-recipe-480x270.jpg"
   ],
-  "recipeYield": ["20", "20 servings (600 ml Jar)"],
+  "recipeYield": "20 servings (600 ml Jar)",
   "prepTime": "PT15M",
   "cookTime": "PT40M",
   "totalTime": "PT55M",
@@ -33,70 +31,64 @@
   ],
   "recipeInstructions": [
     {
-      "@type": "HowToSection",
-      "name": "How to Make Mango Chutney",
-      "itemListElement": [
-        {
-          "@type": "HowToStep",
-          "text": "Rinse mangoes well under running water and peel them. Grate them using a grater or a food processer or dice them to ¼ inch cubes.",
-          "name": "Rinse mangoes well under running water and peel them. Grate them using a grater or a food processer or dice them to ¼ inch cubes.",
-          "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-0"
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Heat oil or ghee in a pan and add cinnamon, cardamoms &amp; star anise.",
-          "name": "Heat oil or ghee in a pan and add cinnamon, cardamoms &amp; star anise.",
-          "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-1"
-        },
-        {
-          "@type": "HowToStep",
-          "text": "When they begin to sizzle add the ginger &amp; fry for a minute. Lower the flame and quickly stir the red chilli, cumin powder, fennel powder.",
-          "name": "When they begin to sizzle add the ginger &amp; fry for a minute. Lower the flame and quickly stir the red chilli, cumin powder, fennel powder.",
-          "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-2"
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Add mangoes, sugar/ jaggery and vinegar. Increase the heat and bring this to a boil.",
-          "name": "Add mangoes, sugar/ jaggery and vinegar. Increase the heat and bring this to a boil.",
-          "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-3"
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Stir and cook covered on a medium heat until the mangoes turn tender &amp; mushy. Open the lid and cook further until it turns slightly thick yet runny. (check picture in the post). The chutney turns thick upon cooling.",
-          "name": "Stir and cook covered on a medium heat until the mangoes turn tender &amp; mushy. Open the lid and cook further until it turns slightly thick yet runny. (check picture in the post). The chutney turns thick upon cooling.",
-          "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-4"
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Add salt and mix well. Taste test and add more sugar, chili, salt and pepper if you want. If you add any more sugar simply cook further until the sugar dissolves and cooks for a few mins longer.",
-          "name": "Add salt and mix well. Taste test and add more sugar, chili, salt and pepper if you want. If you add any more sugar simply cook further until the sugar dissolves and cooks for a few mins longer.",
-          "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-5"
-        },
-        {
-          "@type": "HowToStep",
-          "text": "If you want you may mash the chutney with a masher.",
-          "name": "If you want you may mash the chutney with a masher.",
-          "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-6"
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Overcooking at this stage caramelizes the sugar and makes the mango chunks chewy. So avoid that.",
-          "name": "Overcooking at this stage caramelizes the sugar and makes the mango chunks chewy. So avoid that.",
-          "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-7"
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Cool the mango chutney completely and store it in a clean dry glass jar.",
-          "name": "Cool the mango chutney completely and store it in a clean dry glass jar.",
-          "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-8"
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Serve as a side with grilled appetizers, sandwiches, bread or with chips.",
-          "name": "Serve as a side with grilled appetizers, sandwiches, bread or with chips.",
-          "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-9"
-        }
-      ]
+      "@type": "HowToStep",
+      "text": "Rinse mangoes well under running water and peel them. Grate them using a grater or a food processer or dice them to ¼ inch cubes.",
+      "name": "Rinse mangoes well under running water and peel them. Grate them using a grater or a food processer or dice them to ¼ inch cubes.",
+      "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-0"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Heat oil or ghee in a pan and add cinnamon, cardamoms &amp; star anise.",
+      "name": "Heat oil or ghee in a pan and add cinnamon, cardamoms &amp; star anise.",
+      "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-1"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "When they begin to sizzle add the ginger &amp; fry for a minute. Lower the flame and quickly stir the red chilli, cumin powder, fennel powder.",
+      "name": "When they begin to sizzle add the ginger &amp; fry for a minute. Lower the flame and quickly stir the red chilli, cumin powder, fennel powder.",
+      "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-2"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add mangoes, sugar/ jaggery and vinegar. Increase the heat and bring this to a boil.",
+      "name": "Add mangoes, sugar/ jaggery and vinegar. Increase the heat and bring this to a boil.",
+      "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-3"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Stir and cook covered on a medium heat until the mangoes turn tender &amp; mushy. Open the lid and cook further until it turns slightly thick yet runny. (check picture in the post). The chutney turns thick upon cooling.",
+      "name": "Stir and cook covered on a medium heat until the mangoes turn tender &amp; mushy. Open the lid and cook further until it turns slightly thick yet runny. (check picture in the post). The chutney turns thick upon cooling.",
+      "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-4"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add salt and mix well. Taste test and add more sugar, chili, salt and pepper if you want. If you add any more sugar simply cook further until the sugar dissolves and cooks for a few mins longer.",
+      "name": "Add salt and mix well. Taste test and add more sugar, chili, salt and pepper if you want. If you add any more sugar simply cook further until the sugar dissolves and cooks for a few mins longer.",
+      "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-5"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "If you want you may mash the chutney with a masher.",
+      "name": "If you want you may mash the chutney with a masher.",
+      "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-6"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Overcooking at this stage caramelizes the sugar and makes the mango chunks chewy. So avoid that.",
+      "name": "Overcooking at this stage caramelizes the sugar and makes the mango chunks chewy. So avoid that.",
+      "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-7"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cool the mango chutney completely and store it in a clean dry glass jar.",
+      "name": "Cool the mango chutney completely and store it in a clean dry glass jar.",
+      "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-8"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Serve as a side with grilled appetizers, sandwiches, bread or with chips.",
+      "name": "Serve as a side with grilled appetizers, sandwiches, bread or with chips.",
+      "url": "https://www.indianhealthyrecipes.com/mango-chutney/#wprm-recipe-149572-step-0-9"
     }
   ],
   "aggregateRating": {

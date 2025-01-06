@@ -24,6 +24,10 @@ export const SITE: Site = {
       href: "/rezepte",
     },
     {
+      text: "Blog",
+      href: "/blog",
+    },
+    {
       text: "Tags",
       href: "/tags",
     },

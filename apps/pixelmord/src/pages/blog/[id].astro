@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import BaseLayout from "@/layouts/Layout.astro";
 import Button from "@composable/astro-ui/components/Button";
 import FormattedDate from "@composable/astro-ui/components/FormattedDate";
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   const posts = (await getCollection("blog")).sort(sortItemsByDateDesc);
   const postCount = posts.length;
   return posts.map((post, index) => ({
-    params: { slug: post.slug },
+    params: { id: post.id },
     props: {
       post,
       prevPost: index + 1 !== postCount ? posts[index + 1] : null,
@@ -37,7 +37,7 @@ const {
   tags = [],
   seo,
 } = post.data;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <BaseLayout title={seo?.title ?? title} description={seo?.description ?? excerpt} ogImage={seo?.image} pageType="article" showHeader={false}>

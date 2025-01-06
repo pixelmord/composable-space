@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/tailwind": "^5.1.4",
     "@composable/astro-ui": "workspace:*",
     "@repo/shared": "workspace:*",
-    "astro": "^4.16.6",
+    "astro": "^5.1.2",
     "tailwindcss": "^3.4.14",
     "typescript": "^5.6.3"
   }
