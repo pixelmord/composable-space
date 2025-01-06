@@ -1,16 +1,28 @@
-import type { Site, SocialObjects } from "@repo/shared/types";
-
+import type { Site } from "@repo/shared/types";
+const defaultTitle = "Composable Web";
 export const SITE: Site = {
   website: "https://composableweb.com/", // replace this with your deployed domain
-  canonicalURL: "https://composableweb.com/",
   author: "Andreas Adam",
   description:
     "My name is Andreas Adam and I am writing about the Composable Web",
-  title: "Composable Web",
-  ogImage: "astropaper-og.jpg",
-  lightAndDarkMode: true,
-  postPerPage: 3,
+  title: defaultTitle,
+  ogImage: { src: "astropaper-og.jpg", alt: "ComposableWeb" },
+  postsPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
+  socialLinks: [
+    {
+      name: "Github",
+      href: "https://github.com/pixelmord",
+      linkTitle: ` ${defaultTitle} on Github`,
+      active: true,
+    },
+    {
+      name: "Twitter",
+      href: "https://twitter.com/pixelmord",
+      linkTitle: `${defaultTitle} on Twitter`,
+      active: true,
+    },
+  ],
 };
 
 export const LOCALE = {
@@ -24,18 +36,3 @@ export const LOGO_IMAGE = {
   width: 216,
   height: 46,
 };
-
-export const SOCIALS: SocialObjects = [
-  {
-    name: "Github",
-    href: "https://github.com/pixelmord",
-    linkTitle: ` ${SITE.title} on Github`,
-    active: true,
-  },
-  {
-    name: "Twitter",
-    href: "https://twitter.com/pixelmord",
-    linkTitle: `${SITE.title} on Twitter`,
-    active: true,
-  },
-];
