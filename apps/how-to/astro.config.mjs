@@ -5,9 +5,9 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   integrations: [
     starlight({
-      title: "My Docs",
+      title: "Composable Web Docs",
       social: {
-        github: "https://github.com/withastro/starlight",
+        github: "https://github.com/pixelmord",
       },
       sidebar: [
         {
