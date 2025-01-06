@@ -5,6 +5,7 @@ export const SITE: Site = {
   author: "Andreas Adam",
   description: "Demo",
   title: "Demo Site",
+  socialLinks: [],
 };
 
 export const LOCALE = {

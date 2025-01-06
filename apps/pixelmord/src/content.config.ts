@@ -48,6 +48,7 @@ const projects = defineCollection({
     seo: seoSchema.optional(),
   }),
 });
+
 const recipes = defineCollection({
   loader: glob({ pattern: "**/[^_]*.json", base: "./src/content/recipes" }),
   // Type-check frontmatter using Zod

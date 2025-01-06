@@ -1,10 +1,8 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import PostPreview from "@/components/PostPreview.astro";
 import RecipePreview from "@/components/RecipePreview.astro";
 import Subscribe from "@/components/Subscribe.astro";
 import BaseLayout from "@/layouts/Layout.astro";
-import { slugify } from "@/utils/common-utils";
 import { sortItemsByDateDesc } from "@/utils/data-utils";
 import Button from "@composable/astro-ui/components/Button";
 import FormattedDate from "@composable/astro-ui/components/FormattedDate";
@@ -13,7 +11,7 @@ export async function getStaticPaths() {
   const posts = (await getCollection("recipes")).sort(sortItemsByDateDesc);
   const postCount = posts.length;
   return posts.map((post, index) => ({
-    params: { slug: post.id },
+    params: { id: post.id },
     props: {
       post,
       prevPost: index + 1 !== postCount ? posts[index + 1] : null,

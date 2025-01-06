@@ -5,6 +5,9 @@ export function sortItemsByDateDesc(
   itemA: CollectionEntry<"blog" | "projects" | "recipes">,
   itemB: CollectionEntry<"blog" | "projects" | "recipes">,
 ) {
+  if (!itemA.data.datePublished || !itemB.data.datePublished) {
+    return 0;
+  }
   return (
     new Date(itemB.data.datePublished).getTime() -
     new Date(itemA.data.datePublished).getTime()
