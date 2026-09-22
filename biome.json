@@ -1,5 +1,23 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
+  "files": {
+    "includes": [
+      "**",
+      "!**/dist",
+      "!**/coverage",
+      "!**/build",
+      "!**/src/assets",
+      "!**/public",
+      "!**/node_modules",
+      "!**/__generated__",
+      "!**/storybook-static",
+      "!**/turbo/generators",
+      "!**/.astro",
+      "!**/.turbo",
+      "!**/*.astro",
+      "!**/*.css"
+    ]
+  },
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -7,34 +25,23 @@
     "indentWidth": 2,
     "lineEnding": "lf",
     "lineWidth": 80,
-    "attributePosition": "auto",
-    "ignore": [
-      "dist",
-      "coverage",
-      "build",
-      "src/assets",
-      "public",
-      "node_modules/",
-      "__generated__"
-    ]
+    "attributePosition": "auto"
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
-    "ignore": [
-      "dist",
-      "coverage",
-      "build",
-      "src/assets",
-      "node_modules/",
-      "public",
-      ".astro",
-      "__generated__"
-    ],
     "rules": {
-      "recommended": true
+      "preset": "recommended"
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.css"],
+      "linter": {
+        "rules": {
+          "suspicious": { "noUnknownAtRules": "off" }
+        }
+      }
+    }
+  ]
 }

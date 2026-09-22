@@ -18,9 +18,12 @@
     "@composable/astro-ui": "workspace:*",
     "@repo/shared": "workspace:*",
     "astro": "^7.3.3",
-    "sharp": "^0.35.0"
+    "sharp": "^0.35.4"
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.6"
   }
 }

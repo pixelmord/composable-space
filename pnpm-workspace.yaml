@@ -1,15 +1,9 @@
 packages:
   - "apps/*"
   - "packages/*"
-# better-sqlite3 11.x (pulled by tinacms 2.x via sqlite-level) ships no prebuilt
-# binaries for Node 24 (ABI 137). 12.4.1 is the newest version with prebuilds for
-# both ABI 115 (Node 20, volta pin) and ABI 137 (Node 24). Remove this override
-# when upgrading to tinacms 3.x (which uses better-sqlite3 ^12.10.0 natively).
-overrides:
-  better-sqlite3: 12.4.1
 allowBuilds:
   '@biomejs/biome': true
+  '@parcel/watcher': set this to true or false
   '@sentry/cli': true
-  better-sqlite3: true
   esbuild: true
   sharp: true
