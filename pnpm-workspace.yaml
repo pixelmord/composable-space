@@ -3,7 +3,7 @@ packages:
   - "packages/*"
 allowBuilds:
   '@biomejs/biome': true
-  '@parcel/watcher': set this to true or false
+  '@parcel/watcher': true
   '@sentry/cli': true
   esbuild: true
   sharp: true
