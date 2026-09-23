@@ -1,15 +1,15 @@
 ---
-import { LOCALE, SITE } from "@/config";
 import BaseHead from "@composable/astro-ui/components/BaseHead";
+import { LOCALE, SITE } from "@/config";
+import "../styles/global.css";
 ---
 
 <html lang={LOCALE.lang}>
-  <head>
-    <BaseHead title={SITE.title} description={SITE.description} />
-  </head>
+    <head>
+        <BaseHead title={SITE.title} description={SITE.description} />
+    </head>
 
-
-<body>
-  <slot />
-</body>
+    <body>
+        <slot />
+    </body>
 </html>

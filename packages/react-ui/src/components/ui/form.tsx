@@ -1,5 +1,7 @@
 "use client";
 
+import { Label } from "@composable/react-ui/components/ui/label";
+import { cn } from "@composable/react-ui/lib/utils";
 import type * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
 import * as React from "react";
@@ -12,10 +14,7 @@ import {
   useFormContext,
 } from "react-hook-form";
 
-import { Label } from "@composable/react-ui/components/ui/label";
-import { cn } from "@composable/react-ui/lib/utils";
-
-const Form = FormProvider;
+const Form: typeof FormProvider = FormProvider;
 
 type FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
@@ -168,12 +167,12 @@ const FormMessage = React.forwardRef<
 FormMessage.displayName = "FormMessage";
 
 export {
-  useFormField,
   Form,
-  FormItem,
-  FormLabel,
   FormControl,
   FormDescription,
-  FormMessage,
   FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  useFormField,
 };

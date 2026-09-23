@@ -1,4 +1,5 @@
 import type { Site } from "@repo/shared/types";
+
 const defaultTitle = "Composable Web";
 export const SITE: Site = {
   website: "https://composableweb.com/", // replace this with your deployed domain

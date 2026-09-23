@@ -1,3 +1,5 @@
+// @ts-check
+
 import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
 
@@ -5,10 +7,14 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   integrations: [
     starlight({
-      title: "Composable Web Docs",
-      social: {
-        github: "https://github.com/pixelmord",
-      },
+      title: "My Docs",
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/withastro/starlight",
+        },
+      ],
       sidebar: [
         {
           label: "Guides",
@@ -19,7 +25,7 @@ export default defineConfig({
         },
         {
           label: "Reference",
-          autogenerate: { directory: "reference" },
+          items: [{ autogenerate: { directory: "reference" } }],
         },
       ],
     }),
